@@ -1,4 +1,6 @@
-'''Tạo file dirty_vaccination_data.csv:
+'''File đầu vào
+
+Tạo file dirty_vaccination_data.csv:
 
 country,year,coverage
 Vietnam,2025,95.0
@@ -20,39 +22,31 @@ Nếu country rỗng, bỏ qua.
 Lưu record hợp lệ vào clean_records.
 In số record hợp lệ và không hợp lệ.'''
 import csv
-
 clean_records = []
 invalid_records = 0
-
-with open("dirty_vaccination_data.csv", "r", newline="") as file:
+with open ('dirty_vaccination_data.csv', 'r', newline = "") as file:
     reader = csv.DictReader(file)
-
-    for row in reader:
-        country = row["country"]
-
+    for i in reader :
+        country = i["country"]
         try:
-            year = int(row["year"])
-            coverage = float(row["coverage"])
-
-        except ValueError:
-            print(f"Skipped invalid row: {row}")
-            invalid_records += 1
+            year = int(i["year"])
+            coverage = float(i["coverage"])
+        except ValueError :
+            print(f'Skipped error row: {i}')
+            invalid_records +=1
             continue
-
-        if country == "":
-            print(f"Skipped missing country: {row}")
-            invalid_records += 1
+        if country == "" :
+            print(f'Skipped error row: {i}')
+            invalid_records +=1 
             continue
-
         record = {
-            "country": country,
-            "year": year,
-            "coverage": coverage
+            "country" : country,
+            "year" : year,
+            "coverage" : coverage
         }
-
         clean_records.append(record)
-
-
-print("\n=== Cleaning Summary ===")
-print(f"Valid records: {len(clean_records)}")
+print(f'===Cleaning Summary===')
+print(f'\n{clean_records}')
+print(f"Total of valid records: {len(clean_records)}")
 print(f"Invalid records: {invalid_records}")
+            
