@@ -1,0 +1,16 @@
+'''Yêu cầu:
+
+Nhập tên nước vào search_country.
+Nhập năm vào search_year, dùng int(input(...)).
+Tạo list rỗng matching_records.
+Duyệt dữ liệu. Nếu country và year đều khớp, thêm cả dictionary vào list kết quả.
+Sau khi lọc, in từng record tìm được và tổng số record một lần sau vòng lặp.
+Nếu không tìm thấy, in "No matching records".
+
+Ví dụ:
+
+Enter country: Vietnam
+Enter year: 2025
+
+Vietnam - 2025: 95.0%
+Matching records: 1'''
