@@ -35,7 +35,7 @@ with open ('dirty_vaccination_data.csv', 'r', newline = "") as file:
             print(f'Skipped error row: {i}')
             invalid_records +=1
             continue
-        if country == "" :
+        if country.strip() == "" :
             print(f'Skipped error row: {i}')
             invalid_records +=1 
             continue
