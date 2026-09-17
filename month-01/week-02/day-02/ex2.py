@@ -23,29 +23,36 @@ Saved to high_coverage.json
 
 File high_coverage.json chỉ chứa Vietnam và Japan.'''
 import json
+
+
 def extract_data(filename):
-    with open (filename, "r", encoding="utf-8") as input_file:
-        data = json.load(input_file)
+    with open(filename, "r", encoding="utf-8") as file:
+        data = json.load(file)
+
     return data
-            
-def transform_data (records, minimum_coverage) :
-    matching_records = []
-    for i in records:
-        if i["coverage"] >= minimum_coverage:
-            matching_records.append(i)
-    return matching_records
-    
-def load_data (records, filename):
-    with open (filename, "w", encoding="utf-8") as output_file:
-        json.dump(records, output_file, indent=4, ensure_ascii=False)
-        
-    
-vaccination_records = extract_data("vaccination_data.json")
-high_coverage_records = transform_data(vaccination_records, 90)
-load_data (high_coverage_records, "high_coverage.json")
 
-print(f"Saved records: {len(high_coverage_records)}")
-print("Saved to high_coverage.json")
 
+def transform_data(records, minimum_coverage):
+    filtered_data = []
+
+    for record in records:
+        if record["coverage"] >= minimum_coverage:
+            filtered_data.append(record)
+
+    return filtered_data
+
+
+def load_data(records, filename):
+    with open(filename, "w", encoding="utf-8") as file:
+        json.dump(records, file, indent=4)
+
+
+data = extract_data("vaccination_data.json")
+
+filtered_data = transform_data(data, 90)
+
+load_data(filtered_data, "high_coverage.json")
+
+print(filtered_data)
 
         
