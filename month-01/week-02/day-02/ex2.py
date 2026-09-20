@@ -38,11 +38,11 @@ def load_data (records, filename):
     with open (filename, "w", encoding="utf-8") as output_file:
         json.dump(records, output_file, indent=4, ensure_ascii=False)
         
-reader = extract_data("vaccination_data.json")
-high_coverage_records = transform_data(reader, 90)
-load_data(high_coverage_records, "high_coverage.json")
+data = extract_data("vaccination_data.json")
+filtered_data = transform_data(data, 90)
+load_data(filtered_data, "high_coverage.json")
 
-print(f"Saved records: {len(high_coverage_records)}")
+print(f"Saved records: {len(filtered_data)}")
 print(f"Saved successfully")
 
 

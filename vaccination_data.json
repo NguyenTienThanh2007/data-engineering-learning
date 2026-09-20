@@ -1,12 +1,6 @@
 [
-    {
-        "country": "Vietnam",
-        "year": 2025,
-        "coverage": 95.0
-    },
-    {
-        "country": "Thailand",
-        "year": 2025,
-        "coverage": 70.0
-    }
+    {"country": "Vietnam", "year": 2025, "coverage": 95.0},
+    {"country": "Australia", "year": 2025, "coverage": 85.0},
+    {"country": "Japan", "year": 2025, "coverage": 90.0},
+    {"country": "Thailand", "year": 2025, "coverage": 70.0}
 ]
