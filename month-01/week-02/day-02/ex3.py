@@ -35,40 +35,40 @@ Function phải dùng return.
 Phải dùng json.dump() để ghi summary.json.
 Nếu danh sách rỗng, không được chia cho 0.'''
 import json 
-with open ("vaccination_data.json", "r", encoding= "utf-8") as input_file :
-    data = json.load(input_file) 
-def calculate_summary (records):
+with open ("vaccination_data.json", "r", encoding = "utf-8") as input_file:
+    data = json.load(input_file)
+def calculate_summary(records):
     total_records = len (records)
-    if total_records == 0:
+    if total_records == 0 :
         return {
             "total_records": 0,
-            "average_coverage": 0,
-            "highest_coverage": 0,
-            "highest_country": None 
-            
+            "average_coverage": None,
+            "highest_coverage": None,
+            "highest_country": None
         }
     total_coverage = 0 
     highest_records = records[0]
     for i in records :
         total_coverage += i["coverage"]
         if highest_records["coverage"] <= i["coverage"]:
-            highest_records = i
-    average_coverage = round((total_coverage/ total_records), 2)
+            highest_records = i 
+        average_coverage = round ((total_coverage/ total_records),2)
     summary = {
         "total_records": total_records,
         "average_coverage": average_coverage,
         "highest_coverage": highest_records["coverage"],
         "highest_country": highest_records["country"]
-    }
-    return summary 
+    } 
+    return summary
 summary = calculate_summary(data)
-    
-with open ("summary.json", "w", encoding = "utf-8") as output_file:
-    json.dump (summary, output_file, indent=4, ensure_ascii=False )
-print ("===Vaccination Summary==")
-print(f"Total records: {summary["total_records"]}")
-print(f"Average coverage: {summary["average_coverage"]}")
-print(f"Highest country:{summary["highest_country"]} ")
+with open ("summary.json", "w", encoding="utf-8") as output_file:
+    json.dump(summary, output_file, indent=4, ensure_ascii=False)
+
+print ("===Vaccination Summary===")
+print(f"Total_records: {summary["total_records"]}")
+print (f"Average coverage: {summary["average_coverage"]}")
+print(f"Highest_coverage: {summary["highest_coverage"]}")
+print(f"Highest country: {summary["highest_country"]}")
 print(f"Saved to summary.json")
     
     
