@@ -1,0 +1,8 @@
+country,year,target_population,doses_given
+Vietnam,2025,1000,950
+Australia,2025,2000,1700
+Japan,wrong,1500,1350
+Thailand,2025,0,500
+,2025,1000,800
+Korea,2025,1200,-10
+Canada,2024,800,600
