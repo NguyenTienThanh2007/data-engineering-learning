@@ -1,0 +1,26 @@
+[
+    {
+        "country": "Vietnam",
+        "year": 2025,
+        "target_population": 1000,
+        "doses_given": 950,
+        "coverage": 95.0,
+        "status": "High"
+    },
+    {
+        "country": "Australia",
+        "year": 2025,
+        "target_population": 2000,
+        "doses_given": 1700,
+        "coverage": 85.0,
+        "status": "Medium"
+    },
+    {
+        "country": "Canada",
+        "year": 2024,
+        "target_population": 800,
+        "doses_given": 600,
+        "coverage": 75.0,
+        "status": "Medium"
+    }
+]
