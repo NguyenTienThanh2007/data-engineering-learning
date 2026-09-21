@@ -1,0 +1,58 @@
+#Tiếp tục sử dụng clean_records từ phần 1. Không cần đọc lại file CSV.
+Yêu cầu
+Thêm function:
+calculate_summary(records)
+Function phải nhận danh sách record sạch và tính:
+Tổng số record hợp lệ.
+Coverage trung bình, làm tròn 2 chữ số.
+Coverage cao nhất.
+Country có coverage cao nhất.
+Coverage thấp nhất.
+Country có coverage thấp nhất.
+Số record có status High.
+Số record có status Medium.
+Số record có status Low.
+Function phải trả kết quả dưới dạng một dictionary.
+Kết quả mong muốn
+Với 3 record hợp lệ của phần 1:
+{
+    "total_records": 3,
+    "average_coverage": 85.0,
+    "highest_coverage": 95.0,
+    "highest_country": "Vietnam",
+    "lowest_coverage": 75.0,
+    "lowest_country": "Canada",
+    "status_counts": {
+        "High": 1,
+        "Medium": 2,
+        "Low": 0
+    }
+}
+Ghi file
+Dùng function load_data() đã có để ghi dictionary kết quả vào:
+vaccination_summary.json
+load_data() có thể ghi cả list và dictionary nên không cần tạo function ghi file mới.
+Terminal cần in
+=== ETL Summary ===
+Valid records: 3
+Invalid records: 3
+=== Vaccination Summary ===
+Average coverage: 85.0%
+Highest coverage: Vietnam - 95.0%
+Lowest coverage: Canada - 75.0%
+High: 1
+Medium: 2
+Low: 0
+Saved to clean_vaccination_data.json
+Saved to vaccination_summary.json
+Trường hợp đặc biệt
+Nếu records là list rỗng:
+Không được chia cho 0.
+Highest và lowest nên là None.
+Các status count đều bằng 0.
+Điều kiện hoàn thành
+Giữ nguyên 3 function ở phần 1.
+Thêm calculate_summary(records).
+Không viết lại dữ liệu bằng tay.
+Dùng vòng for để tính tổng, tìm cao nhất/thấp nhất và đếm status.
+Lưu được cả hai file JSON.
