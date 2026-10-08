@@ -73,4 +73,4 @@ print("Output directory created")
 if input_file.exists():
     print("Ready to process data")
 else:
-    print("Cannot process data because input file does not exist ")
+    print("Cannot process data because input file does not exist")
